@@ -16,13 +16,13 @@
                 <h6>👤 Human</h6>
                 <hr>
                 <div class="human-choice">
-                    <button class="btn" id="rock" onclick="changeImage('rock.png')">Rock</button>
-                    <button class="btn" id="paper" onclick="changeImage('paper.png')">Paper</button>
-                    <button class="btn" id="scissors" onclick="changeImage('scissors.png')">Scissors</button>
+                    <button class="btn" id="rock" onclick="changeImageHuman('rock.png'); changeImageComputer();" >Rock</button>
+                    <button class="btn" id="paper" onclick="changeImageHuman('paper.png'); changeImageComputer();">Paper</button>
+                    <button class="btn" id="scissors" onclick="changeImageHuman('scissors.png'); changeImageComputer();">Scissors</button>
                 </div>                
                 <p style="color: #333;">Choose Your Weapon to Start</p>
                 <div class="image-container">
-                    <img src="Qmark.png" alt="" id="mainImage">
+                    <img src="Qmark.png" alt="" id="mainImageHuman">
                 </div>
             </div>
             <div class="computer">
@@ -35,7 +35,7 @@
                 </div>                
                 <p style="color: #333;">AI will choose itself</p>
                 <div class="image-container">
-                    <img src="Qmark.png" alt="">
+                    <img src="Qmark.png" alt="" id="mainImageComputer">
                 </div>
             </div>
             </div>
