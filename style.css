@@ -78,6 +78,7 @@ footer {
     background-color: #1f2937;
     color: white;
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     font-size: large;
     border-bottom: 1px black solid;
@@ -85,4 +86,8 @@ footer {
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 70px;
+}
+footer > .name, .contact {
+    flex: 1;
+    margin: 10px;
 }
