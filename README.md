@@ -1,2 +1,2 @@
 # Rock-Paper-Scissors
-The logic for GAme is Designed, Making it interactive using DOM will be done later
+Basic Rock Paper Scissor Game Designed, Human vs Human and Impossible mode and score tracking are 3 features which will be added later. customized name will also be avalaible sooner
