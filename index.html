@@ -16,9 +16,9 @@
                 <h6>👤 Human</h6>
                 <hr>
                 <div class="human-choice">
-                    <button class="btn" id="rock" onclick="changeImageHuman('rock.png'); changeImageComputer();" >Rock</button>
-                    <button class="btn" id="paper" onclick="changeImageHuman('paper.png'); changeImageComputer();">Paper</button>
-                    <button class="btn" id="scissors" onclick="changeImageHuman('scissors.png'); changeImageComputer();">Scissors</button>
+                    <button class="btn" id="rock" onclick="handleHumanChoice('rock.png')" >Rock</button>
+                    <button class="btn" id="paper" onclick="handleHumanChoice('paper.png');">Paper</button>
+                    <button class="btn" id="scissors" onclick="handleHumanChoice('scissors.png');">Scissors</button>
                 </div>                
                 <p style="color: #333;">Choose Your Weapon to Start</p>
                 <div class="image-container">
@@ -43,7 +43,9 @@
         <div class="congrats" id="congrats">
             <h2>Result!</h2>
             <p id="winnerMessage">Winner: Human</p>
-
+            <h5>Play Again?</h5>
+            <button class="btn" id="playAgainNo" onclick="playAgain(false)">No</button>
+            <button class="btn" id="playAgainYes" onclick="playAgain(true)">Yes</button>
         </div>
     </div>
     <footer id="footer">

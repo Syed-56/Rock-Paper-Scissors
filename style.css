@@ -111,6 +111,22 @@ body {
     z-index: 1000;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
+.congrats > button {
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.congrats > button:hover {
+    background-color: turquoise;
+    color: aliceblue;
+    box-shadow: 0 4px 8px rgba(158, 186, 197, 0.9);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
 
 footer {
     background-color: #1f2937;

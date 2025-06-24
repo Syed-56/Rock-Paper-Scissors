@@ -1,6 +1,10 @@
-let humanDone, computerDone;
+let gameActive = true;
+let humanDone = false;
+let computerDone = false;
+let humanChoice, computerChoice;
 const images = ['rock.png', 'paper.png', 'scissors.png'];
-let humanChoice;
+let winner, message = "";
+
 function changeImageHuman(finalImage) {
     let imgElement = document.getElementById('mainImageHuman');
     let counter = 0;
@@ -27,7 +31,6 @@ function changeImageHuman(finalImage) {
 }
 
 
-let computerChoice;
 function changeImageComputer() {
     let finalImage = images[Math.floor(Math.random() * images.length)];
     let imgElement = document.getElementById('mainImageComputer');
@@ -54,7 +57,6 @@ function changeImageComputer() {
     }, intervalTime);
 }
 
-let winner;
 function showWinner(resultText) {
     const announcementDiv = document.getElementById("congrats");
     const message = document.getElementById("winnerMessage");
@@ -63,7 +65,6 @@ function showWinner(resultText) {
     announcementDiv.style.display = "block";
 }
 
-let message = "";
 function checkWinner() {
     if (humanChoice === computerChoice) {
         winner = "none";
@@ -83,4 +84,34 @@ function checkWinner() {
     setTimeout(() => {
         showWinner(message);
     }, 500);
+}
+
+function playAgain(choice) {
+    const announcementDiv = document.getElementById("congrats");
+
+    if (choice) {
+        announcementDiv.style.display = "none";
+        humanDone = false;
+        computerDone = false;
+        let imgElement1 = document.getElementById('mainImageHuman'); 
+        imgElement1.src = 'Qmark.png'; 
+        let imgElement2 = document.getElementById('mainImageComputer'); 
+        imgElement2.src = 'Qmark.png'; 
+    } else {
+        announcementDiv.style.display = "none";
+        gameActive = false;
+    }
+}
+
+function handleHumanChoice(imageName) {
+    if (!gameActive) return; 
+    humanDone = false;
+    computerDone = false;
+    changeImageHuman(imageName);
+    const compImage = images[Math.floor(Math.random() * images.length)];
+    changeImageComputer(compImage);
+}
+
+function playGame() {
+    playAgain(true); 
 }
