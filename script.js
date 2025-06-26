@@ -1,4 +1,5 @@
 let gameActive = true;
+let gameMode = '';
 let humanDone = false;
 let computerDone = false;
 let humanChoice, computerChoice;
@@ -27,6 +28,40 @@ function setName() {
     }
 }
 
+function setSinglePlayerMode() {
+    location.href='#singlePlayerMode';
+    gameMode = 'single';
+    console.log("Single Player mode selected");
+}
+function setImpossibleMode() {
+    location.href='#singlePlayerMode';
+    gameMode = 'impossible';
+    console.log("Impossible Mode selected");
+    const elements = document.querySelectorAll('*');
+  
+    elements.forEach(el => {
+      const styles = window.getComputedStyle(el);
+      const bg = styles.backgroundColor;
+      const border = styles.borderColor;
+  
+      if (bg.includes('rgba(151, 214, 208') || bg.includes('rgb(8, 240, 217)')) {
+        el.style.backgroundColor = 'rgba(255, 80, 80, 0.8)';
+      }
+  
+      if (bg.includes('rgb(8, 240, 217)') || bg.includes('rgba(151, 214, 208, 0.767)')) {
+        el.style.backgroundColor = 'red';
+      }
+  
+      if (border.includes('turquoise') || border.includes('rgba(151, 214, 208, 0.767)')) {
+        el.style.borderColor = 'red';
+      }
+  
+      if (styles.boxShadow.includes('turquoise') || styles.boxShadow.includes('rgba(151, 214, 208, 0.767)')) {
+        el.style.boxShadow = '0 0 25px 10px red';
+      }
+    });
+  }  
+
 function changeImageHuman(finalImage) {
     let imgElement = document.getElementById('mainImageHuman');
     let counter = 0;
@@ -53,8 +88,7 @@ function changeImageHuman(finalImage) {
 }
 
 
-function changeImageComputer() {
-    let finalImage = images[Math.floor(Math.random() * images.length)];
+function changeImageComputer(finalImage) {
     let imgElement = document.getElementById('mainImageComputer');
     let counter = 0;
     let spinTime = 1000; // 1 second
@@ -130,7 +164,18 @@ function handleHumanChoice(imageName) {
     humanDone = false;
     computerDone = false;
     changeImageHuman(imageName);
-    const compImage = images[Math.floor(Math.random() * images.length)];
+    let compImage='';
+    if (gameMode === 'single') {
+        compImage = images[Math.floor(Math.random() * images.length)];
+    } else if (gameMode === 'impossible') {
+        if (imageName === 'rock.png') {
+            compImage = 'paper.png';
+        } else if (imageName === 'paper.png') {
+            compImage = 'scissors.png';
+        } else if (imageName === 'scissors.png') {
+            compImage = 'rock.png';
+        }
+    }
     changeImageComputer(compImage);
 }
 
