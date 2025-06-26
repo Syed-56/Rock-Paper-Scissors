@@ -9,11 +9,24 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="intro">
+        <h1>Welcome To Rock Paper Scissors</h1>
+        <div class="name-input">
+            <input type="text" class="name-bar" id="nameBar" placeholder="Enter Your Name...">
+            <button class="name-button" id="nameButton" onclick="setName()">Submit</button>
+        </div>
+        <div id="modes">
+            <p>Choose Game Mode</p>
+            <button class="btn" id="singlePlayer" onclick="location.href='#singlePlayerMode'">Single Player</button>
+            <button class="btn" id="multiPlayer">2 Player</button>
+            <button class="btn" id="impossible">Impossible Mode</button>
+        </div>
+    </div>
+    <div class="container" id="singlePlayerMode">
         <h2 class="title">Rock Paper Scissors</h2>
         <div class="human-and-comp">
             <div class="human">
-                <h6>👤 Human</h6>
+                <h6 id="Player1">👤 Human</h6>
                 <hr>
                 <div class="human-choice">
                     <button class="btn" id="rock" onclick="handleHumanChoice('rock.png')" >Rock</button>
@@ -26,7 +39,7 @@
                 </div>
             </div>
             <div class="computer">
-                <h6>🤖 Computer</h6>
+                <h6 id="Player2">🤖 Computer</h6>
                 <hr>
                 <div class="robot-choice">
                     <button class="btn" id="rock">Rock</button>

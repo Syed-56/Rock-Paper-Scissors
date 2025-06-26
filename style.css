@@ -1,9 +1,101 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
 body {
     background-color: rgba(151, 214, 208, 0.767);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif
+}
+
+.intro {
+    height: 100vh;
+    background-color: aliceblue;
+    margin: 20px;
+    box-shadow: 0 8px 16px rgba(0.5, 0.5, 0.5, 0.9);
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name-input {
+    display: flex;
+    flex-direction: row;
+}
+.name-input > input {
+    width: 300px;
+    height: 50px;
+    border: 2px solid turquoise;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: medium;
+    margin: 18px 20px;
+    flex-grow: 1;
+}
+.name-input > input:focus {
+    outline: none;
+    border-color: #1f2937;
+    box-shadow: 0 0 5px rgba(31, 41, 55, 0.5);
+}
+.name-input > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    height: 50px;
+    padding: 20px;
+    background-color: rgba(151, 214, 208, 0.767);;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+    transition: background-color 0.3s;
+}
+#modes {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(151, 214, 208, 0.767);
+    padding: 30px;
+    margin-top: 50px;
+    height: 300px;
+    width: 600px;
+    align-items: center;
+    color: aliceblue;
+    border-radius: 30px;
+}
+.modes {
+    background-color: rgb(8, 240, 217); 
+    box-shadow: 0 0 25px 10px turquoise;
+    transform: scale(1.05); 
+    transition: all 0.4s ease;
+    border-radius: 10px;
+}
+#modes > p {
+    font-size: 40px;
+    font-weight: bold;
+}
+#modes > button {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: #1f2937;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#modes > button:hover {
+    background-color: turquoise;
+    color: aliceblue;
+    box-shadow: 0 4px 8px rgba(158, 186, 197, 0.9);
+    transform: scale(1.05);
 }
 
 .container {

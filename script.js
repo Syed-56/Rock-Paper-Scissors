@@ -5,6 +5,28 @@ let humanChoice, computerChoice;
 const images = ['rock.png', 'paper.png', 'scissors.png'];
 let winner, message = "";
 
+const inputText = document.getElementById('nameBar');
+console.log("Input field:", inputText.value);
+function setName() {
+    const nameContent = inputText.value.trim();
+    if (nameContent === '') {
+        alert('Please enter your Name.');
+        return;
+    }
+    else {
+        const nameElement = document.getElementById('Player1');
+        nameElement.textContent = "👤 " + nameContent;
+        console.log("Name set to:", nameContent);
+        const gameModes = document.getElementById('modes');
+        gameModes.setAttribute('class','modes');
+
+        window.scrollBy({
+            top: 100,
+            behavior: 'smooth'
+        });
+    }
+}
+
 function changeImageHuman(finalImage) {
     let imgElement = document.getElementById('mainImageHuman');
     let counter = 0;
