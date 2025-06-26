@@ -12,91 +12,107 @@ body {
 }
 
 .intro {
-    height: 100vh;
+    min-height: 100vh;
     background-color: aliceblue;
-    margin: 20px;
+    margin: 2vh 2vw;
     box-shadow: 0 8px 16px rgba(0.5, 0.5, 0.5, 0.9);
-    border-radius: 20px;
-    padding: 50px;
+    border-radius: 2vw;
+    padding: 5vh 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 3vh;
 }
+
 .name-input {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap; /* allows wrap on smaller screens */
+    justify-content: center;
+    width: 100%;
+    gap: 2vw;
 }
+
 .name-input > input {
-    width: 300px;
-    height: 50px;
+    flex: 1 1 250px; /* grow, shrink, basis */
+    min-width: 150px;
+    height: 6vh;
     border: 2px solid turquoise;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: medium;
-    margin: 18px 20px;
-    flex-grow: 1;
+    border-radius: 0.5vw;
+    padding: 1vh 2vw;
+    font-size: 1.2em;
 }
+
 .name-input > input:focus {
     outline: none;
     border-color: #1f2937;
     box-shadow: 0 0 5px rgba(31, 41, 55, 0.5);
 }
+
 .name-input > button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px;
-    height: 50px;
-    padding: 20px;
-    background-color: rgba(151, 214, 208, 0.767);;
+    flex: 0 1 150px;
+    min-width: 120px;
+    height: 6vh;
+    padding: 0 2vw;
+    background-color: rgba(151, 214, 208, 0.767);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5vw;
+    margin-top: 7px;
     cursor: pointer;
-    font-size: medium;
+    font-size: 1em;
     transition: background-color 0.3s;
 }
+
 #modes {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: rgba(151, 214, 208, 0.767);
-    padding: 30px;
-    margin-top: 50px;
-    height: 300px;
-    width: 600px;
+    padding: 5vh 3vw;
+    margin: 15vh;
+    height: auto;
+    width: 100%;
+    max-width: 70vw;
     align-items: center;
     color: aliceblue;
-    border-radius: 30px;
+    border-radius: 2vw;
+    gap: 2vh;
 }
+
 .modes {
-    background-color: rgb(8, 240, 217); 
+    background-color: rgb(8, 240, 217);
     box-shadow: 0 0 25px 10px turquoise;
-    transform: scale(1.05); 
+    transform: scale(1.05);
     transition: all 0.4s ease;
     border-radius: 10px;
 }
+
 #modes > p {
-    font-size: 40px;
+    font-size: 5vw;
     font-weight: bold;
+    text-align: center;
 }
+
 #modes > button {
-    width: 200px;
-    height: 50px;
+    width: 60%;
+    max-width: 300px;
+    height: 20vh;
     background-color: white;
     color: #1f2937;
     border: none;
-    border-radius: 5px;
+    border-radius: 1vw;
     cursor: pointer;
-    font-size: medium;
-    margin-top: 20px;
+    font-size: 1.5em;
     transition: background-color 0.3s, transform 0.3s;
 }
+
 #modes > button:hover {
     background-color: turquoise;
     color: aliceblue;
     box-shadow: 0 4px 8px rgba(158, 186, 197, 0.9);
     transform: scale(1.05);
 }
+
 
 .container {
     background-color: aliceblue;
