@@ -22,7 +22,7 @@ function setName() {
         gameModes.setAttribute('class','modes');
 
         window.scrollBy({
-            top: 100,
+            top: 140,
             behavior: 'smooth'
         });
     }
